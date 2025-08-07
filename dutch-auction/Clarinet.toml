@@ -1,6 +1,20 @@
 [project]
 name = "dutch-auction"
+description = "A Dutch auction smart contract"
+authors = []
+telemetry = true
+cache_dir = ".clarinet"
 
-[[contracts]]
-name = "dutch-auction"
+[contracts.dutch-auction]
 path = "contracts/dutch-auction.clar"
+clarity_version = 2
+epoch = 2.4
+
+[contracts.bid-history]
+path = "contracts/bid-history.clar"
+clarity_version = 2
+epoch = 2.4
+
+[repl]
+costs_version = 3
+parser_version = 2
