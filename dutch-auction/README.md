@@ -1,36 +1,36 @@
 # Dutch Auction Smart Contract
 
-This project implements a Dutch Auction using the Clarity language on the Stacks blockchain.
+This project implements a Dutch Auction using Clarity on the Stacks blockchain.
 
-## 🛠 Features
+## Features
 
-- Owner starts the auction with initial price, reserve price, decrement rate, start and end block.
-- The price decreases over time based on block height.
-- First buyer to call `buy` at or above the current price wins.
+### Dutch Auction (`dutch-auction.clar`)
+- Starts at a high price and decreases over time.
+- Buyer can purchase at the current price before the auction ends.
+- Tracks ownership, timing, pricing, and restricts unauthorized access.
 
-## 📦 Setup
+### Bid History (`bid-history.clar`)
+- Keeps a record of each bid (auction ID + bidder + price + block).
+- Useful for auditing and verifying auction activity.
 
-### 1. Install Clarinet
+## Setup
+
+### Install Clarinet
 
 ```bash
 npm install -g @hirosystems/clarinet
 ```
 
-### 2. Clone the project and run tests
+### Run locally
 
 ```bash
-git clone <your-repo-url>
-cd dutch-auction
 clarinet check
-clarinet test
+clarinet console
 ```
 
-### 3. Files
+## Project Structure
 
-- `contracts/dutch-auction.clar` – Main Clarity contract.
-- `Clarinet.toml` – Project config.
-- `README.md` – Project description and usage.
-
-## 🚀 Deploying
-
-Use Clarinet or the Stacks CLI to deploy the contract to a testnet or mainnet.
+- `contracts/dutch-auction.clar` – Main auction logic.
+- `contracts/bid-history.clar` – Tracks bidder history.
+- `Clarinet.toml` – Project setup.
+- `README.md` – Guide and documentation.
