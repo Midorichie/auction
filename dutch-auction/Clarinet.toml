@@ -1,0 +1,6 @@
+[project]
+name = "dutch-auction"
+
+[[contracts]]
+name = "dutch-auction"
+path = "contracts/dutch-auction.clar"
